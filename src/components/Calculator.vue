@@ -47,7 +47,7 @@ export default {
                         this.total = this.total.slice(0, -1);
                     }
 
-                    this.total = eval(this.total);
+                    this.total = String(eval(this.total));
 
                     break;
 
@@ -62,6 +62,7 @@ export default {
                         value.match(/[-+*/]/) &&
                         this.total.slice(-1).match(/[-+*/]/)
                     ) {
+                        console.log('LOL')
                         // Prevents adding multiple operators
                         if (value !== this.total.slice(-1)) {
                             // If the last character is an operator, replace the previous one
